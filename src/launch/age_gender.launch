@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+	<param name="model_detect" type="string" value="$(find forecast_age_gender)/model/detect.bin" />
+	<param name="model_attribution" type="string" value="$(find forecast_age_gender)/model/attribution.bin" />
+	<param name="output_image" type="string" value="$(find forecast_age_gender)/image/" />
+	<param name="ch_ttf" type="string" value="$(find forecast_age_gender)/ttf/platech.ttf" />
+
+	<node pkg="forecast_age_gender" type="forecast_age_gender_node" name="forecast_age_gender" output="screen" respawn="true">
+		<param name="video_path" type="string" value="rtsp://admin:rsxx1111@192.168.201.73:554/" />
+		<param name="cam" type="string" value="age_gender" />
+	</node>
+
+	<!--
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find forecast_age_gender)/rviz/Plate_right_front.rviz" />
+	-->
+
+</launch>
